@@ -1,0 +1,35 @@
+<script>
+  function vote(xmlFilePath, localVote, idNumber) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/vote', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        const response = JSON.parse(xhr.responseText);
+        // Handle the response as needed
+      }
+    };
+    xhr.send(JSON.stringify({ xmlFilePath: xmlFilePath }));
+    document.getElementById(idNumber).innerText = localVote + 1;
+  }
+  
+  function report(xmlFilePath, localVote, idNumber) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/report', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        const response = JSON.parse(xhr.responseText);
+        // Handle the response as needed
+      }
+    };
+    xhr.send(JSON.stringify({ xmlFilePath: xmlFilePath }));
+  }
+  
+	function downloadFile(xmlFilePath, fileName) {
+	  const link = document.createElement('a');
+	  link.href = `${xmlFilePath}`;
+	  link.download = fileName;
+	  link.click();
+	}
+</script>

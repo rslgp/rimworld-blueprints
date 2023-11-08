@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Blueprints Community</title>
+  
+  <%- include('scripts/voteFunction') %>
+  <script>
+  
+// function vote(xmlFilePath, localVote, idNumber) {
+//   const xhr = new XMLHttpRequest();
+//   xhr.open('POST', '/vote', true);
+//   xhr.setRequestHeader('Content-Type', 'application/json');
+//   xhr.onreadystatechange = function() {
+//     if (xhr.readyState === 4 && xhr.status === 200) {
+//       const response = JSON.parse(xhr.responseText);
+//		
+//     }
+//   };
+//   xhr.send(JSON.stringify({ xmlFilePath: xmlFilePath }));
+//	document.getElementById(idNumber).innerText = localVote+1;
+// }
+  
+//  function downloadFile(xmlFilePath, fileName) {
+//	  const link = document.createElement('a');
+//	  link.href = `${xmlFilePath}`;
+//	  link.download = fileName;
+//	  link.click();
+//	}
+
+function unsecuredCopyToClipboard(text) {
+  const textArea = document.createElement("textarea");
+  textArea.value = text;
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  try {
+    document.execCommand('copy');
+  } catch (err) {
+    console.error('Unable to copy to clipboard', err);
+  }
+  document.body.removeChild(textArea);
+  window.scrollTo(0,0);
+}
+
+const copyTextToClipboard = (text, message) => {
+    navigator.clipboard.writeText(text)
+    .then(() => {
+        bootstrap.showToast({
+            header: "Information",
+            body: message ? message : 'Copied to clipboard !',
+            toastClass: "text-bg-success",
+            delay: 1000
+        });
+    })
+    .catch(err => {
+        bootstrap.showToast({
+            header: "Information",
+            body: "Error during copy command.",
+            toastClass: "text-bg-danger"
+        });
+    });
+}
+
+</script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    .preview {
+      max-height: 200px;
+      max-width: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-4">
+    <h1 class="mb-4">Rimworld Blueprints Community - XML File Upload</h1> 
+	
+	<%- include('donate') %>
+	
+	<span>Blueprint location: (win + r) </span> <input id="Code" value="%localappdata%low\Ludeon Studios\RimWorld by Ludeon Studios\Blueprints" readonly> 
+	<button onclick="copyTextToClipboard(document.querySelector('#Code').value);">Copy</button> 
+	
+	<% if (msg) { %>
+      <p><%= msg %></p>
+    <% } %>
+
+    <!-- XML input -->
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <div class="border p-4 mb-4" id="dropContainer">
+        Drop Here XML blueprint and preview image
+      </div>
+
+      <div class="mb-3">
+        <label for="xmlFile" class="form-label">XML:</label>
+        <input type="file" name="xmlFile" id="xmlFile" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label for="imageFile" class="form-label">PREVIEW:</label>
+        <input type="file" name="imageFile" id="imageFile" class="form-control">
+      </div>
+      <input type="text" name="name" id="nameFile" class="form-control mb-3" placeholder="Enter Name">
+      <input type="submit" value="Upload" class="btn btn-primary">
+    </form>
+
+	<hr class="bg-danger border-2 border-top" />
+    
+	<div class="mt-4">
+      <input type="text" id="searchInput" class="form-control" placeholder="Search by Name" oninput="filterFiles()">
+    </div>
+
+    <div class="row">
+      <% if (xmlFiles.length > 0) { %>
+        <% for (let i = 0; i < xmlFiles.length; i++) { %>
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
+            <div class="file card">
+              <a href="blueprint<%= xmlFiles[i].xmlFilePath.replace("uploads/","") %>" target="_blank" rel="noopener noreferrer">
+                <img src="<%= xmlFiles[i].imageFilePath %>" class="card-img-top preview" alt="Preview Image">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title"><%= xmlFiles[i].name %></h5>
+                <p class="card-text">Votes: <span id="<%= xmlFiles[i].xmlFilePath %>-vote"><%= xmlFiles[i].votes %></span></p>				
+                <button onclick="downloadFile('<%= xmlFiles[i].xmlFilePath %>','<%= xmlFiles[i].name %>')" class="btn btn-primary">Download</button>
+                <button onclick="vote('<%= xmlFiles[i].xmlFilePath %>', <%= xmlFiles[i].votes %>, '<%= xmlFiles[i].xmlFilePath %>-vote')" class="btn btn-primary">Vote</button>
+				<br/>
+				<button style="margin-top:10px" onclick="report('<%= xmlFiles.xmlFilePath %>', <%= xmlFiles.votes %>, '<%= xmlFiles.xmlFilePath %>-vote')" class="btn btn-danger">Report</button>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      <% } %>
+    </div>
+  </div>
+</body>
+
+
+<script>
+	  dropContainer.ondragover = dropContainer.ondragenter = function(evt) {
+	  evt.preventDefault();
+	};
+
+	dropContainer.ondrop = function(evt) {
+
+		// pretty simple -- but not for IE :(
+		//fileInput.files = evt.dataTransfer.files;
+
+		// If you want to use some of the dropped files
+		//const dT = new DataTransfer();
+		for (var i = 0; i < evt.dataTransfer.files.length; i++) {
+			console.log(evt.dataTransfer.files[i]);
+			var dT_temp = new DataTransfer();
+			var t = evt.dataTransfer.files[i].type.split('/');
+			if(t[0]=="image" ){
+				dT_temp.items.add(evt.dataTransfer.files[i]);
+				imageFile.files = dT_temp.files;
+			}
+			else if(t[1]=="xml"){
+				dT_temp.items.add(evt.dataTransfer.files[i]);
+				xmlFile.files = dT_temp.files;
+				nameFile.value = evt.dataTransfer.files[i].name.replace(".xml","");
+			}
+			//dT.items.add(evt.dataTransfer.files[i]);
+		};
+		//fileInput.files = dT.files;
+
+		evt.preventDefault();
+	};
+	
+	window.addEventListener("dragover",function(e){
+	  e = e || event;
+	  e.preventDefault();
+	},false);
+	window.addEventListener("drop",function(e){
+	  e = e || event;
+	  e.preventDefault();
+	},false);
+	
+  </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-show-toast@1.1.5/src/bootstrap-show-toast.min.js"></script>
+ 
+
+</html>

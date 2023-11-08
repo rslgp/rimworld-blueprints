@@ -1,0 +1,620 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Blueprint>
+	<meta>
+		<gameVersion>1.3.3389 rev40</gameVersion>
+		<modIds>
+			<li>brrainz.harmony</li>
+			<li>ludeon.rimworld</li>
+			<li>ludeon.rimworld.royalty</li>
+			<li>ludeon.rimworld.ideology</li>
+			<li>brrainz.nopausechallenge</li>
+			<li>kosaro.fahrenheitandcelsius</li>
+			<li>peppsen.pmusic</li>
+			<li>unlimitedhugs.hugslib</li>
+			<li>krkr.rocketman</li>
+			<li>brrainz.cameraplus</li>
+			<li>mastertea.randomplus</li>
+			<li>tikubonn.dontblockdoor</li>
+			<li>vanillastorytellersexpanded.winstonwave</li>
+			<li>xormask.seedfinder</li>
+			<li>fluffy.blueprints</li>
+		</modIds>
+		<modSteamIds>
+			<li>0</li>
+			<li>0</li>
+			<li>1149640</li>
+			<li>1392840</li>
+			<li>0</li>
+			<li>0</li>
+			<li>0</li>
+			<li>0</li>
+			<li>0</li>
+			<li>0</li>
+			<li>0</li>
+			<li>0</li>
+			<li>0</li>
+			<li>0</li>
+			<li>0</li>
+		</modSteamIds>
+		<modNames>
+			<li>Harmony</li>
+			<li>Core</li>
+			<li>Royalty</li>
+			<li>Ideology</li>
+			<li>No Pause Challenge</li>
+			<li>Fahrenheit and Celsius</li>
+			<li>P-Music</li>
+			<li>HugsLib</li>
+			<li>RocketMan - Performance Mod</li>
+			<li>Camera+</li>
+			<li>RandomPlus</li>
+			<li>DontBlockDoor</li>
+			<li>Vanilla Storytellers Expanded - Winston Waves</li>
+			<li>SeedFinder</li>
+			<li>Blueprints</li>
+		</modNames>
+	</meta>
+	<Blueprint>
+		<BuildableThings>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-9, 0, -3)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-9, 0, -2)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-9, 0, -1)</Position>
+			</li>
+			<li>
+				<ThingDef>Door</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-9, 0, 0)</Position>
+				<Rotation>1</Rotation>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-9, 0, 1)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-9, 0, 2)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-9, 0, 3)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-8, 0, -3)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-8, 0, 3)</Position>
+			</li>
+			<li>
+				<ThingDef>Door</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-7, 0, -3)</Position>
+			</li>
+			<li>
+				<ThingDef>AnimalSleepingSpot</ThingDef>
+				<Position>(-7, 0, -2)</Position>
+			</li>
+			<li>
+				<ThingDef>DiningChair</ThingDef>
+				<Stuff>Steel</Stuff>
+				<Position>(-7, 0, -1)</Position>
+				<Rotation>2</Rotation>
+			</li>
+			<li>
+				<ThingDef>DiningChair</ThingDef>
+				<Stuff>Steel</Stuff>
+				<Position>(-7, 0, 1)</Position>
+				<Rotation>2</Rotation>
+			</li>
+			<li>
+				<ThingDef>AnimalSleepingSpot</ThingDef>
+				<Position>(-7, 0, 2)</Position>
+			</li>
+			<li>
+				<ThingDef>Door</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-7, 0, 3)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-6, 0, -3)</Position>
+			</li>
+			<li>
+				<ThingDef>AnimalSleepingSpot</ThingDef>
+				<Position>(-6, 0, -2)</Position>
+			</li>
+			<li>
+				<ThingDef>Door</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-6, 0, -1)</Position>
+				<Rotation>1</Rotation>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-6, 0, 0)</Position>
+			</li>
+			<li>
+				<ThingDef>Door</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-6, 0, 1)</Position>
+				<Rotation>1</Rotation>
+			</li>
+			<li>
+				<ThingDef>AnimalSleepingSpot</ThingDef>
+				<Position>(-6, 0, 2)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-6, 0, 3)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-5, 0, -3)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-5, 0, -2)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-5, 0, -1)</Position>
+			</li>
+			<li>
+				<ThingDef>Door</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-5, 0, 0)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-5, 0, 1)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-5, 0, 2)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-5, 0, 3)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-4, 0, -2)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-4, 0, 2)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-3, 0, -2)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-3, 0, -1)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-3, 0, 0)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-3, 0, 1)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-3, 0, 2)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-2, 0, -3)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-2, 0, -2)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-2, 0, -1)</Position>
+			</li>
+			<li>
+				<ThingDef>Door</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-2, 0, 0)</Position>
+				<Rotation>1</Rotation>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-2, 0, 1)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-2, 0, 2)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-2, 0, 3)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-1, 0, -3)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-1, 0, -2)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-1, 0, -1)</Position>
+			</li>
+			<li>
+				<ThingDef>Door</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-1, 0, 0)</Position>
+				<Rotation>1</Rotation>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-1, 0, 1)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-1, 0, 2)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(-1, 0, 3)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(0, 0, -3)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(0, 0, -2)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(0, 0, -1)</Position>
+			</li>
+			<li>
+				<ThingDef>Door</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Rotation>1</Rotation>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(0, 0, 1)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(0, 0, 2)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(0, 0, 3)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(1, 0, -3)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(1, 0, -2)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(1, 0, -1)</Position>
+			</li>
+			<li>
+				<ThingDef>Door</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(1, 0, 0)</Position>
+				<Rotation>1</Rotation>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(1, 0, 1)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(1, 0, 2)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(1, 0, 3)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(2, 0, -3)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(2, 0, -2)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(2, 0, -1)</Position>
+			</li>
+			<li>
+				<ThingDef>Door</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(2, 0, 0)</Position>
+				<Rotation>1</Rotation>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(2, 0, 1)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(2, 0, 2)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(2, 0, 3)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(3, 0, -2)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(3, 0, -1)</Position>
+			</li>
+			<li>
+				<ThingDef>Door</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(3, 0, 0)</Position>
+				<Rotation>1</Rotation>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(3, 0, 1)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(3, 0, 2)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(4, 0, -3)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(4, 0, -2)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(4, 0, -1)</Position>
+			</li>
+			<li>
+				<ThingDef>Door</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(4, 0, 0)</Position>
+				<Rotation>1</Rotation>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(4, 0, 1)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(4, 0, 2)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(4, 0, 3)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(5, 0, -3)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(5, 0, -2)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(5, 0, -1)</Position>
+			</li>
+			<li>
+				<ThingDef>Door</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(5, 0, 0)</Position>
+				<Rotation>1</Rotation>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(5, 0, 1)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(5, 0, 2)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(5, 0, 3)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(6, 0, -3)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(6, 0, -2)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(6, 0, -1)</Position>
+			</li>
+			<li>
+				<ThingDef>Barricade</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(6, 0, 0)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(6, 0, 1)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(6, 0, 2)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(6, 0, 3)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(7, 0, -1)</Position>
+			</li>
+			<li>
+				<ThingDef>Door</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(7, 0, 0)</Position>
+				<Rotation>1</Rotation>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(7, 0, 1)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(8, 0, -1)</Position>
+			</li>
+			<li>
+				<ThingDef>Door</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(8, 0, 0)</Position>
+				<Rotation>1</Rotation>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(8, 0, 1)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(9, 0, -1)</Position>
+			</li>
+			<li>
+				<ThingDef>Door</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(9, 0, 0)</Position>
+				<Rotation>1</Rotation>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(9, 0, 1)</Position>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(10, 0, -1)</Position>
+			</li>
+			<li>
+				<ThingDef>Door</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(10, 0, 0)</Position>
+				<Rotation>1</Rotation>
+			</li>
+			<li>
+				<ThingDef>Wall</ThingDef>
+				<Stuff>BlocksSandstone</Stuff>
+				<Position>(10, 0, 1)</Position>
+			</li>
+		</BuildableThings>
+		<Name>ChineseKillbox</Name>
+		<Size>(20, 7)</Size>
+	</Blueprint>
+</Blueprint>
