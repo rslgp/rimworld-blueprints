@@ -5,6 +5,12 @@ const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
 const bodyParser = require('body-parser');
 const fs = require('fs');
+//const https = require('https');
+//const httpsoptions = {
+//     key: fs.readFileSync('/path/to/privkey.pem'),
+//     cert: fs.readFileSync('/path/to/fullchain.pem'),
+//     ca: fs.readFileSync('/path/to/chain.pem')
+//}
 
 const storage = multer.diskStorage({
   destination: './uploads',
@@ -188,7 +194,11 @@ app.post('/report', (req, res) => {
 });
 
 
-const port = 3000;
+const port = 80;
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
+
+//var server = https.createServer(httpsoptions, app);
+//server.listen(443);
+//sudo node server.js
