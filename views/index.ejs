@@ -136,11 +136,11 @@ const copyTextToClipboard = (text, message) => {
 
       <div class="mb-3">
         <label for="xmlFile" class="form-label">XML:</label>
-        <input type="file" name="xmlFile" id="xmlFile" class="form-control">
+        <input type="file" name="xmlFile" id="xmlFile" class="form-control" accept=".xml">
       </div>
       <div class="mb-3">
         <label for="imageFile" class="form-label">PREVIEW:</label>
-        <input type="file" name="imageFile" id="imageFile" class="form-control" onChange="detectNSFW()">
+        <input type="file" name="imageFile" id="imageFile" class="form-control" onChange="detectNSFW()" accept="image/*">
       </div>
       <input type="text" name="name" id="nameFile" class="form-control mb-3" placeholder="Enter Name">
       <input type="submit" value="Upload" class="btn btn-primary" id="submitButton" disabled>
