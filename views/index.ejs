@@ -5,6 +5,48 @@
   <title>Blueprints Community</title>
   
   <%- include('scripts/voteFunction') %>
+  <script src="https://cdn.jsdelivr.net/npm/nsfwjs/dist/nsfwjs.min.js"></script>
+  <script>
+    var model = null;	
+    async function hideNSFW(e) {
+	  if(model==null){		
+		model = await nsfwjs.load();
+	  }
+	  var predictions = await model.classify(e);
+	  for(var p of predictions){
+		if(p.probability > 0.5 && (p.className=="Porn" || p.className=="Sexy" || p.className=="Hentai")){
+			e.parentNode.parentNode.parentNode.remove();			
+		}
+	  }
+		
+	}	
+	
+    async function detectNSFW() {
+      const imageUpload = document.getElementById('imageFile');
+	  const form = document.getElementById('uploadForm');
+	  const submitButton = document.getElementById('submitButton');
+      
+      const imageFile = imageUpload.files[0];
+      const image = document.createElement('img');
+      image.src = URL.createObjectURL(imageFile);
+      
+      const model1 = await nsfwjs.load();
+	  //if(model==null){		
+		//model = await nsfwjs.load();
+	  //}
+      const predictions = await model1.classify(image);
+	  
+	  for(var p of predictions){
+		if(p.probability > 0.5 && (p.className=="Porn" || p.className=="Sexy" || p.className=="Hentai")){
+			form.remove();			
+		}
+	  }
+	  submitButton.disabled = false;
+      
+      //alert(JSON.stringify(predictions, null, 2));
+    }
+    
+  </script>
   <script>
   
 // function vote(xmlFilePath, localVote, idNumber) {
@@ -87,21 +129,21 @@ const copyTextToClipboard = (text, message) => {
     <% } %>
 
     <!-- XML input -->
-    <form action="/upload" method="POST" enctype="multipart/form-data">
+    <form action="/upload" method="POST" enctype="multipart/form-data" id="uploadForm">
       <div class="border p-4 mb-4" id="dropContainer">
         Drop Here XML blueprint and preview image
       </div>
 
       <div class="mb-3">
         <label for="xmlFile" class="form-label">XML:</label>
-        <input type="file" name="xmlFile" id="xmlFile" class="form-control" accept=".xml">
+        <input type="file" name="xmlFile" id="xmlFile" class="form-control">
       </div>
       <div class="mb-3">
         <label for="imageFile" class="form-label">PREVIEW:</label>
-        <input type="file" name="imageFile" id="imageFile" class="form-control" accept="image/*">
+        <input type="file" name="imageFile" id="imageFile" class="form-control" onChange="detectNSFW()">
       </div>
       <input type="text" name="name" id="nameFile" class="form-control mb-3" placeholder="Enter Name">
-      <input type="submit" value="Upload" class="btn btn-primary">
+      <input type="submit" value="Upload" class="btn btn-primary" id="submitButton" disabled>
     </form>
 
 	<hr class="bg-danger border-2 border-top" />
@@ -116,7 +158,7 @@ const copyTextToClipboard = (text, message) => {
           <div class="col-lg-3 col-md-4 col-sm-6 mb-4 text-center">
             <div class="file card">
               <a href="blueprint<%= xmlFiles[i].xmlFilePath.replace("uploads/","") %>" target="_blank" rel="noopener noreferrer">
-                <img src="<%= xmlFiles[i].imageFilePath %>" class="card-img-top preview" alt="Preview Image">
+                <img src="<%= xmlFiles[i].imageFilePath %>" class="card-img-top preview" alt="Preview Image" onload="hideNSFW(this)">
               </a>
               <div class="card-body">
                 <h5 class="card-title"><%= xmlFiles[i].name %></h5>
@@ -154,6 +196,7 @@ const copyTextToClipboard = (text, message) => {
 			if(t[0]=="image" ){
 				dT_temp.items.add(evt.dataTransfer.files[i]);
 				imageFile.files = dT_temp.files;
+				detectNSFW();
 			}
 			else if(t[1]=="xml"){
 				dT_temp.items.add(evt.dataTransfer.files[i]);
