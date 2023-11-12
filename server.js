@@ -5,12 +5,12 @@ const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
 const bodyParser = require('body-parser');
 const fs = require('fs');
-//const https = require('https');
-//const httpsoptions = {
-//     key: fs.readFileSync('/path/to/privkey.pem'),
-//     cert: fs.readFileSync('/path/to/fullchain.pem'),
-//     ca: fs.readFileSync('/path/to/chain.pem')
-//}
+const https = require('https');
+const httpsoptions = {
+     key: fs.readFileSync('./cert/privkey.pem'),
+     cert: fs.readFileSync('./cert/fullchain.pem'),
+     ca: fs.readFileSync('./cert/chain.pem')
+}
 
 const storage = multer.diskStorage({
   destination: './uploads',
@@ -29,7 +29,7 @@ const uploadMulter = multer({
     fileSize: 1024 * 1024, // 1MB
   },
   fileFilter: function (req, file, cb) {
-    if (file.mimetype === 'application/xml' || file.mimetype.startsWith('image/')) {
+    if (file.mimetype === 'text/xml' || file.mimetype.startsWith('image/')) {
       cb(null, true);
     } else {
       cb(new Error('Only .xml files or images are allowed'));
