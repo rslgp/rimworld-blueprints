@@ -27,6 +27,13 @@ const uploadMulter = multer({
   storage: storage,
   limits: {
     fileSize: 1024 * 1024, // 1MB
+  },
+  fileFilter: function (req, file, cb) {
+    if (file.mimetype === 'application/xml' || file.mimetype.startsWith('image/')) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only .xml files or images are allowed'));
+    }
   }
 }).fields([
   { name: 'xmlFile', maxCount: 1 },
